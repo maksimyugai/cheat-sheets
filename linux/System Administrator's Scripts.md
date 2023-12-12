@@ -1,16 +1,5 @@
-
-#### Functions
-
+#### Aliases
 ```
-function retlog() {
-  if [[ -z $1 ]];then
-    echo '/var/log/nginx/access.log'
-  else
-    echo $1
-  fi 
-}
-
-# Aliases
 alias ping='ping -c 5'
 alias clr='clear; echo Currently logged in on $TTY, as $USERNAME in directory $PWD.'
 alias path='print -l $path'
@@ -23,6 +12,18 @@ alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1,1n -nr'
 alias pscpu10='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1,1n -nr | head -n 10'
 # top10 of the history
 alias hist10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
+```
+
+#### Functions
+
+```
+function retlog() {
+  if [[ -z $1 ]];then
+    echo '/var/log/nginx/access.log'
+  else
+    echo $1
+  fi 
+}
 
 function ip() {
   if [ -t 1 ]; then
@@ -33,6 +34,10 @@ function ip() {
 }
 ```
 
+##### run local web server
+```
+python3 -m http.server 8080 --directory Downloads
+```
 ##### directory LS
 ```
 function dls() {
