@@ -83,3 +83,13 @@ start en enable the service
 ```
 systemctl enable --now cloudflared
 ```
+
+To run tunnel without creating credential files *--token* argument can be used:
+```
+cloudflared tunnel --token <generated token>
+```
+
+To see token for a particular tunnel this command can be executed:
+```
+cloudflared tunnel token <tunnel-name>
+```
