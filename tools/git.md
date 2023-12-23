@@ -48,11 +48,13 @@ Git can be configured by the CLI using the `git config` command. For first confi
 can be done by the following commands:
 
 ```bash
+git config --global --edit
 git config --global user.name "MyFancyUser"
-```
-
-```bash
 git config --global user.email "developer@mydomain.com"
+git config --global user.signingkey <key-id>
+git config --global core.editor "vim"
+git config --global pull.rebase true
+git config --global commit.gpgsign true
 ```
 
 ## Using Git
